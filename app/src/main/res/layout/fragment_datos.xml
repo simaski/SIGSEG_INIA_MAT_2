@@ -1,0 +1,729 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_funcionario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/abc_action_bar_default_height_material"
+                android:text="@string/op_funcionario"
+                android:textColor="@color/md_text"
+                android:textSize="21sp" />
+
+            <EditText
+                android:id="@+id/et_funcionario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/tv_funcionario"
+                android:ems="10"
+                android:hint="Escribe Nombre Funcionario" />
+
+            <TextView
+                android:id="@+id/tv_fechaCaptura"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/et_funcionario"
+                android:layout_marginTop="10dp"
+                android:text="@string/op_fechaCaptura"
+                android:textColor="@color/md_text"
+                android:textSize="21sp" />
+
+            <EditText
+                android:id="@+id/et_fechaCaptura"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_fechaCaptura"
+                android:editable="false" />
+
+            <TextView
+                android:id="@+id/tv_oficinaEstado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/et_fechaCaptura"
+                android:layout_marginTop="10dp"
+                android:text="@string/op_oficinaEstado"
+                android:textColor="@color/md_text"
+                android:textSize="21sp" />
+
+            <Spinner
+                android:id="@+id/spi_oficinaEstado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/tv_oficinaEstado"
+                android:longClickable="true" />
+
+            <TextView
+                android:id="@+id/tv_nombreFinca"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/spioficinaEstado"
+                android:layout_below="@+id/spi_oficinaEstado"
+                android:layout_marginTop="10dp"
+                android:text="@string/op_nombreFinca"
+                android:textColor="@color/md_text"
+                android:textSize="21sp" />
+
+            <EditText
+                android:id="@+id/et_nombreFinca"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tv_nombreFinca"
+                android:layout_below="@+id/tv_nombreFinca"
+                android:ems="10"
+                android:hint="Ingrse Nombre Finca"
+                android:inputType="text" />
+
+
+            <TextView
+                android:id="@+id/tv_tipoCultivo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/et_nombreFinca"
+                android:layout_marginTop="10dp"
+                android:text="@string/op_tipoCultivo"
+                android:textColor="@color/md_text"
+                android:textSize="21sp" />
+
+
+            <EditText
+                android:id="@+id/et_tipoCultivo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/tv_tipoCultivo"
+                android:ems="10"
+                android:hint="Tipo de cultivo"
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/tv_fotografia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/et_tipoCultivo"
+                android:layout_margin="8dip"
+                android:drawableRight="@drawable/camara"
+                android:gravity="center_vertical"
+                android:text="Fotografia"
+                android:textColor="?attr/colorPrimary"
+                android:textSize="21sp" />
+
+            <Button
+                android:id="@+id/bt_panoramica"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/txt_lamina"
+                android:layout_below="@+id/tv_fotografia"
+                android:text="Panoramica" />
+
+            <ImageView
+                android:id="@+id/img_panoramica"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/bt_panoramica"
+                android:layout_below="@+id/bt_panoramica"
+                android:layout_gravity="center" />
+
+            <Button
+                android:id="@+id/bt_detalle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/bt_panoramica"
+                android:layout_alignRight="@+id/bt_panoramica"
+                android:layout_below="@+id/img_panoramica"
+                android:text="Detalle" />
+
+            <ImageView
+                android:id="@+id/img_detalle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/img_panoramica"
+                android:layout_below="@+id/bt_detalle"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/tv_fechaSiembra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/img_detalle"
+                android:layout_marginTop="10dp"
+                android:text="@string/op_fechaSiembra"
+                android:textColor="@color/md_text"
+                android:textSize="21sp" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_fechaSiembra">
+
+                <EditText
+                    android:id="@+id/et_fechaSiembra"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/tv_fechaSiembra"
+                    android:ems="10"
+                    android:hint="Fecha de Siembra"
+                    android:editable="false"
+                    android:layout_weight="1"/>
+
+                <Button
+                    android:id="@+id/bt_fechaSiembra"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:text="Fecha"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_variedad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/linearLayout1"
+                android:layout_marginTop="10dp"
+                android:text="@string/op_variedad"
+                android:textColor="@color/md_text"
+                android:textSize="21sp" />
+
+            <EditText
+                android:id="@+id/et_variedad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/tv_variedad"
+                android:ems="10"
+                android:hint="Tipo de variedad"
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/tv_etapaFenologica"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/et_variedad"
+                android:layout_marginTop="10dp"
+                android:text="@string/op_etapaFenologica"
+                android:textColor="@color/md_text"
+                android:textSize="21sp" />
+
+            <Spinner
+                android:id="@+id/spi_etapaFenologica"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/tv_etapaFenologica"
+                android:longClickable="true" />
+
+            <TextView
+                android:id="@+id/tv_condicion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/spi_etapaFenologica"
+                android:layout_marginTop="10dp"
+                android:text="@string/op_condicion"
+                android:textColor="@color/md_text"
+                android:textSize="21sp" />
+
+            <Spinner
+                android:id="@+id/spi_condicion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/tv_condicion"
+                android:longClickable="true" />
+
+            <TextView
+                android:id="@+id/tv_numeroLote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/spi_condicion"
+                android:layout_marginTop="10dp"
+                android:text="@string/op_numeroLote"
+                android:textColor="@color/md_text"
+                android:textSize="21sp" />
+
+            <EditText
+                android:id="@+id/et_numeroLote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/tv_numeroLote"
+                android:ems="10"
+                android:hint="Numero de Lote"
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/tv_observacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/et_numeroLote"
+                android:layout_marginTop="10dp"
+                android:text="@string/op_observacion"
+                android:textColor="@color/md_text"
+                android:textSize="21sp" />
+
+            <EditText
+                android:id="@+id/et_observacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/tv_observacion"
+                android:hint="Observacion"
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/info_puntos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/bt_detalle"
+                android:layout_below="@+id/et_observacion"
+                android:layout_margin="8dip"
+                android:drawableRight="@drawable/mundo2"
+                android:gravity="center_vertical"
+                android:text="Puntos"
+                android:textColor="?attr/colorPrimary"
+                android:textSize="21sp" />
+
+            <TextView
+                android:id="@+id/punto1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/bt_detalle"
+                android:layout_below="@+id/info_puntos"
+                android:gravity="center_vertical"
+                android:text="Punto 1"
+                android:textColor="@color/md_text"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/lat_p1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/punto1"
+                android:background="?attr/colorPrimary"
+                android:textColor="@color/md_text" />
+
+            <TextView
+                android:id="@+id/lon_p1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/lat_p1"
+                android:background="?attr/colorPrimary"
+                android:textColor="@color/md_text" />
+
+            <TextView
+                android:id="@+id/punto2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/bt_detalle"
+                android:layout_below="@+id/lon_p1"
+                android:gravity="center_vertical"
+                android:text="Punto 2"
+                android:visibility="gone"
+                android:textColor="@color/md_text"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/lat_p2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/punto2"
+                android:background="?attr/colorPrimary"
+                android:visibility="gone"
+                android:textColor="@color/md_text" />
+
+            <TextView
+                android:id="@+id/lon_p2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/lat_p2"
+                android:background="?attr/colorPrimary"
+                android:visibility="gone"
+                android:textColor="@color/md_text" />
+
+            <TextView
+                android:id="@+id/punto3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/bt_detalle"
+                android:layout_below="@+id/lon_p2"
+                android:gravity="center_vertical"
+                android:text="Punto 3"
+                android:visibility="gone"
+                android:textColor="@color/md_text"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/lat_p3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/punto3"
+                android:background="?attr/colorPrimary"
+                android:visibility="gone"
+                android:textColor="@color/md_text" />
+
+            <TextView
+                android:id="@+id/lon_p3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/lat_p3"
+                android:background="?attr/colorPrimary"
+                android:visibility="gone"
+                android:textColor="@color/md_text" />
+
+            <TextView
+                android:id="@+id/punto4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/bt_detalle"
+                android:layout_below="@+id/lon_p3"
+                android:gravity="center_vertical"
+                android:text="Punto 4"
+                android:visibility="gone"
+                android:textColor="@color/md_text"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/lat_p4"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/punto4"
+                android:background="?attr/colorPrimary"
+                android:visibility="gone"
+                android:textColor="@color/md_text" />
+
+            <TextView
+                android:id="@+id/lon_p4"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/lat_p4"
+                android:background="?attr/colorPrimary"
+                android:visibility="gone"
+                android:textColor="@color/md_text" />
+
+            <TextView
+                android:id="@+id/punto5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/bt_detalle"
+                android:layout_below="@+id/lon_p4"
+                android:gravity="center_vertical"
+                android:text="Punto 5"
+                android:visibility="gone"
+                android:textColor="@color/md_text"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/lat_p5"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/punto5"
+                android:background="?attr/colorPrimary"
+                android:visibility="gone"
+                android:textColor="@color/md_text" />
+
+            <TextView
+                android:id="@+id/lon_p5"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/lat_p5"
+                android:background="?attr/colorPrimary"
+                android:visibility="gone"
+                android:textColor="@color/md_text" />
+
+            <TextView
+                android:id="@+id/punto6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/bt_detalle"
+                android:layout_below="@+id/lon_p5"
+                android:gravity="center_vertical"
+                android:text="Punto 6"
+                android:visibility="gone"
+                android:textColor="@color/md_text"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/lat_p6"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/punto6"
+                android:background="?attr/colorPrimary"
+                android:visibility="gone"
+                android:textColor="@color/md_text" />
+
+            <TextView
+                android:id="@+id/lon_p6"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/lat_p6"
+                android:background="?attr/colorPrimary"
+                android:visibility="gone"
+                android:textColor="@color/md_text" />
+
+            <TextView
+                android:id="@+id/punto7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/bt_detalle"
+                android:layout_below="@+id/lon_p6"
+                android:gravity="center_vertical"
+                android:text="Punto 7"
+                android:visibility="gone"
+                android:textColor="@color/md_text"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/lat_p7"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/punto7"
+                android:background="?attr/colorPrimary"
+                android:visibility="gone"
+                android:textColor="@color/md_text" />
+
+            <TextView
+                android:id="@+id/lon_p7"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/lat_p7"
+                android:background="?attr/colorPrimary"
+                android:visibility="gone"
+                android:textColor="@color/md_text" />
+
+            <TextView
+                android:id="@+id/punto8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/bt_detalle"
+                android:layout_below="@+id/lon_p7"
+                android:gravity="center_vertical"
+                android:text="Punto 8"
+                android:visibility="gone"
+                android:textColor="@color/md_text"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/lat_p8"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/punto8"
+                android:background="?attr/colorPrimary"
+                android:visibility="gone"
+                android:textColor="@color/md_text" />
+
+            <TextView
+                android:id="@+id/lon_p8"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/lat_p8"
+                android:background="?attr/colorPrimary"
+                android:visibility="gone"
+                android:textColor="@color/md_text" />
+
+            <TextView
+                android:id="@+id/punto9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/bt_detalle"
+                android:layout_below="@+id/lon_p8"
+                android:gravity="center_vertical"
+                android:text="Punto 9"
+                android:visibility="gone"
+                android:textColor="@color/md_text"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/lat_p9"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/punto9"
+                android:background="?attr/colorPrimary"
+                android:visibility="gone"
+                android:textColor="@color/md_text" />
+
+            <TextView
+                android:id="@+id/lon_p9"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/lat_p9"
+                android:background="?attr/colorPrimary"
+                android:visibility="gone"
+                android:textColor="@color/md_text" />
+
+            <TextView
+                android:id="@+id/punto10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/bt_detalle"
+                android:layout_below="@+id/lon_p9"
+                android:gravity="center_vertical"
+                android:text="Punto 10"
+                android:visibility="gone"
+                android:textColor="@color/md_text"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/lat_p10"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/punto10"
+                android:background="?attr/colorPrimary"
+                android:visibility="gone"
+                android:textColor="@color/md_text" />
+
+            <TextView
+                android:id="@+id/lon_p10"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/lat_p10"
+                android:background="?attr/colorPrimary"
+                android:visibility="gone"
+                android:textColor="@color/md_text" />
+
+            <Button
+                android:id="@+id/bt_capturar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lon_p10"
+                android:layout_alignParentRight="true"
+                android:text="@string/op_btCapturar" />
+
+            <TextView
+                android:id="@+id/info_geo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/bt_detalle"
+                android:layout_below="@+id/bt_capturar"
+                android:layout_margin="8dip"
+                android:drawableRight="@drawable/mundo2"
+                android:gravity="center_vertical"
+                android:text="Información Geografica"
+                android:textColor="?attr/colorPrimary"
+                android:textSize="21sp" />
+
+            <TextView
+                android:id="@+id/Latitud"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/txt_lamina"
+                android:layout_below="@+id/info_geo"
+                android:text="Latitud:"
+                android:textColor="@color/md_text"
+                android:textSize="21sp" />
+
+            <TextView
+                android:id="@+id/latitudres"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/Latitud"
+                android:background="?attr/colorPrimary"
+                android:textColor="@color/md_text" />
+
+            <TextView
+                android:id="@+id/longitud"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/latitudres"
+                android:layout_below="@+id/latitudres"
+                android:text="Longitud:"
+                android:textColor="@color/md_text"
+                android:textSize="21sp" />
+
+            <TextView
+                android:id="@+id/longitudres"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/longitud"
+                android:background="?attr/colorPrimary"
+                android:textColor="@color/md_text" />
+
+            <TextView
+                android:id="@+id/precision"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/longitudres"
+                android:layout_below="@+id/longitudres"
+                android:text="Error:"
+                android:textColor="@color/md_text"
+                android:textSize="21sp" />
+
+            <TextView
+                android:id="@+id/precisonres"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/precision"
+                android:layout_below="@+id/precision"
+                android:background="?attr/colorPrimary"
+                android:textColor="@color/md_text" />
+
+            <Button
+                android:id="@+id/bt_enviar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/precisonres"
+                android:layout_centerInParent="true"
+                android:text="@string/op_btEnviar" />
+
+            <Button
+                android:id="@+id/bt_ver"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bt_enviar"
+                android:layout_centerInParent="true"
+                android:text="Ver" />
+
+            <TextView
+                android:id="@+id/tvResultado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bt_ver"
+                android:layout_toRightOf="@+id/bt_detalle"
+                android:text="Aqui va el texto" />
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>
