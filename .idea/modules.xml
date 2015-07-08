@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SIGSEG_INIA_MAT.iml" filepath="$PROJECT_DIR$/SIGSEG_INIA_MAT.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SIGSEG_INIA_MAT_2.iml" filepath="$PROJECT_DIR$/SIGSEG_INIA_MAT_2.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
