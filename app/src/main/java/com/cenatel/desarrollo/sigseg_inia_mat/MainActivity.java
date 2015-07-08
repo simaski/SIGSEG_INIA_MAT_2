@@ -1,13 +1,16 @@
 package com.cenatel.desarrollo.sigseg_inia_mat;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -120,4 +123,40 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
     }
+
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK || keyCode == KeyEvent.KEYCODE_HOME) {
+            //backButton = true;
+            //Toast tosat2 = Toast.makeText(getApplicationContext(),"Funciona!!!!", Toast.LENGTH_SHORT ); tosat2.show();
+            AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+            // Setting Dialog Title
+            alertDialog.setTitle("Salir de la Aplicación");
+            // Setting Dialog Message
+            alertDialog.setMessage("¿Quieres salir de la aplicación?");
+            // Setting Icon to Dialog
+            // alertDialog.setIcon(R.drawable.delete);
+            // On pressing Settings button
+            alertDialog.setPositiveButton("No",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                        }
+                    });
+            // on pressing cancel button
+            alertDialog.setNegativeButton("Si",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            //moveTaskToBack(true);
+                            //locationManager.removeUpdates(locListener);
+                            //hand.removeCallbacks(actualizar);
+                            MainActivity.this.finish();
+                            //onStop();
+                        }
+                    });
+            // Showing Alert Message
+            alertDialog.show();
+        }
+        return true;
+    }
+
 }

@@ -719,7 +719,7 @@ public class DatosFragment extends Fragment implements LocationListener {
         //alertDialog.setIcon(R.drawable.delete);
         // On pressing Settings button
         alertDialog.setPositiveButton("OK!", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog,int which) {
+            public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
             }
         });
@@ -752,6 +752,41 @@ public class DatosFragment extends Fragment implements LocationListener {
     }
     //************************************FIN DIALOGO PERSONALIZADO****************************************
 
+
+    /*public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK || keyCode == KeyEvent.KEYCODE_HOME) {
+            backButton = true;
+            //Toast tosat2 = Toast.makeText(getApplicationContext(),"Funciona!!!!", Toast.LENGTH_SHORT ); tosat2.show();
+            AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity());
+            // Setting Dialog Title
+            alertDialog.setTitle("Salir de la Aplicación");
+            // Setting Dialog Message
+            alertDialog.setMessage("¿Quieres salir de la aplicación?");
+            // Setting Icon to Dialog
+            // alertDialog.setIcon(R.drawable.delete);
+            // On pressing Settings button
+            alertDialog.setPositiveButton("No",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                        }
+                    });
+            // on pressing cancel button
+            alertDialog.setNegativeButton("Si",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            //moveTaskToBack(true);
+                            //locationManager.removeUpdates(locListener);
+                            //hand.removeCallbacks(actualizar);
+                            getActivity().finish();
+                            //onStop();
+                        }
+                    });
+            // Showing Alert Message
+            alertDialog.show();
+        }
+        return true;
+    }*/
 
 
 }
