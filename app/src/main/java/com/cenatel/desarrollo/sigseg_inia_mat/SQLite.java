@@ -290,7 +290,7 @@ public class SQLite {
         {
             do
             {
-                item += "ID: [" + cursor.getInt(0) + "]\r\n";
+                item += "ID: " + cursor.getInt(0) + "\r\n";
                 item += "Nombre Funcionario: " + cursor.getString(1) + "\r\n";
                 item += "Fecha de Captura: " + cursor.getString(2) + "\r\n";
                 listData2.add( item );

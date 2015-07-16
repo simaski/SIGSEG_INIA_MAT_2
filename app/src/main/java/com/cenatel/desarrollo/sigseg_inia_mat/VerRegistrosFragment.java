@@ -24,7 +24,7 @@ public class VerRegistrosFragment extends Fragment {
     private SQLite sqlite;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_puntos, container, false);
+        View v = inflater.inflate(R.layout.fragment_verreegistros, container, false);
         listView = (ListView) v.findViewById( R.id.lstRegistros );
         //Abre conexion a sqlite
         sqlite = new SQLite(getActivity());
@@ -39,8 +39,8 @@ public class VerRegistrosFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Object object = listView.getItemAtPosition( position );
                 //Se extrae el ID = [X]
-                int posicionInicial = object.toString().indexOf("[") + 1;
-                int posicionFinal = object.toString().indexOf("]", posicionInicial);
+                int posicionInicial = object.toString().indexOf("") + 1;
+                int posicionFinal = object.toString().indexOf("", posicionInicial);
                 String resultado =  object.toString().substring(posicionInicial, posicionFinal);
                 //ejecuta nueva actividad
                 Bundle b = new Bundle();
