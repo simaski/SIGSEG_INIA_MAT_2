@@ -23,20 +23,21 @@ public class PuntosFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_puntos,container,false);
 
+
         textView = (TextView) v.findViewById(R.id.txtResultado);
-        textView.setTextSize(28);
+        //textView.setTextSize(28);
         textView.setText( ""  );
-        Intent i = getActivity().getIntent();
+        /*Intent i = getActivity().getIntent();
         Bundle bundle = i.getExtras();
-        if ( bundle != null ) {
-            int id = bundle.getInt("id");
+        if ( bundle != null ) {*/
+            int id = 1;//bundle.getInt("id");
             //base de datos
             sqlite = new SQLite(getActivity());
             sqlite.abrir();
             Cursor cursor = sqlite.getRegistro(id);
             ArrayList<String> reg = sqlite.getFormatListUniv(cursor);
             textView.setText( reg.get(0)  );
-        }
+        //}
         //
         return v;
     }
