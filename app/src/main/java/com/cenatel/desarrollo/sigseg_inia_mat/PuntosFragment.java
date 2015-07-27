@@ -26,31 +26,14 @@ public class PuntosFragment extends Fragment {
 
 
         textView = (TextView) v.findViewById(R.id.txtResultado);
-        //textView.setTextSize(28);
         textView.setText( ""  );
-        /*Intent i = getActivity().getIntent();
-        Bundle bundle = i.getExtras();
-        if ( bundle != null ) {*/
         int j = getArguments().getInt("Key");
-        //Toast.makeText(getActivity(), "PULSANDO SOBRE LIST VIEW"+j, Toast.LENGTH_SHORT).show();
-        //int id = 1;//bundle.getInt("id");
-
-            //base de datos
             sqlite = new SQLite(getActivity());
             sqlite.abrir();
             Cursor cursor = sqlite.getRegistro(j);
             ArrayList<String> reg = sqlite.getFormatListUniv(cursor);
             textView.setText( reg.get(0)  );
-        //}
-        //
         return v;
     }
-
-   /* @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.registros, menu);
-        return true;
-    }*/
 
 }
