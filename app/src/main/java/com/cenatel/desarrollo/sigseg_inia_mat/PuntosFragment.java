@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -30,11 +31,14 @@ public class PuntosFragment extends Fragment {
         /*Intent i = getActivity().getIntent();
         Bundle bundle = i.getExtras();
         if ( bundle != null ) {*/
-            int id = 1;//bundle.getInt("id");
+        int j = getArguments().getInt("Key");
+        //Toast.makeText(getActivity(), "PULSANDO SOBRE LIST VIEW"+j, Toast.LENGTH_SHORT).show();
+        //int id = 1;//bundle.getInt("id");
+
             //base de datos
             sqlite = new SQLite(getActivity());
             sqlite.abrir();
-            Cursor cursor = sqlite.getRegistro(id);
+            Cursor cursor = sqlite.getRegistro(j);
             ArrayList<String> reg = sqlite.getFormatListUniv(cursor);
             textView.setText( reg.get(0)  );
         //}

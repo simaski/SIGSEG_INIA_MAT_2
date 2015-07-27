@@ -44,11 +44,14 @@ public class VerRegistrosFragment extends Fragment {
                 int posicionFinal = object.toString().indexOf("]", posicionInicial);
                 //String resultado = object.toString().substring(posicionInicial, posicionFinal);
                 //ejecuta nueva actividad
-               // Bundle b = new Bundle();
-                //b.putInt("id", Integer.valueOf(resultado));
                 registroPosicion = position + 1;
+
+
                 //Toast.makeText(getActivity(), "PULSANDO SOBRE LIST VIEW"+registroPosicion, Toast.LENGTH_SHORT).show();
                 PuntosFragment fragment2 = new PuntosFragment();
+                Bundle parametro = new Bundle();
+                parametro.putInt("Key",registroPosicion);
+                fragment2.setArguments(parametro);
                 android.support.v4.app.FragmentTransaction fragmentTransaction2 = getFragmentManager().beginTransaction();
                 fragmentTransaction2.replace(R.id.frame, fragment2);
                 fragmentTransaction2.commit();
